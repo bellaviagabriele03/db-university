@@ -13,8 +13,19 @@ where cfu > 10
 
 -- 3. Selezionare tutti gli studenti che hanno più di 30 anni
 
+-- soluzione scherzosa xdxdxdxdxd:
+select *
+from students
+where year(date_of_birth) = 1996
 
+-- soluzione seria: cercando ho trovato TIMESTAMPDIFF che calcola sostanzialmente la differenza tra date 
+-- selezionando un tipo di unità (es: anno / mese o giorno) e facendo la differenza con la data corrente (curdate()) 
+-- sono riuscito a trovare tutti gli studenti che hanno un età > di 30 
+--                <3 <3 <3 <3 <3 <3 <3 <3 
 
+select *, timestampdiff(year, date_of_birth, curdate()) as age_of_students
+from students
+where timestampdiff(year, date_of_birth, curdate()) >= 30;
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di  laurea (286)
 
