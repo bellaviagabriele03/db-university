@@ -44,3 +44,7 @@ from departments
 
 
 -- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50
+
+select count(id) as teachers_without_phone
+from teachers
+where phone is null
