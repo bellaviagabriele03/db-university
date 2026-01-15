@@ -5,7 +5,11 @@
 -- 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
 
 
-
+select students.name as student_name, students.surname as student_surname, degrees.name as degree_name
+from students
+inner join degrees 
+on students.degree_id = degrees.id
+where degrees.name = "corso di laurea in economia"
 
 
 
