@@ -37,7 +37,13 @@ where teachers.id = 44
 -- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il  relativo dipartimento, in ordine alfabetico per cognome e nome
 
 
-
+select students.surname as student_surname, students.name as student_name, degrees.name as degree_name, departments.name as depart_name
+from students
+inner join degrees 
+on students.degree_id = degrees.id
+inner join departments 
+on departments.id = degrees.department_id 
+order by students.surname
 
 
 
@@ -45,7 +51,13 @@ where teachers.id = 44
 
 
 
+
+
+
 -- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+
+
+
 
 
 
