@@ -38,7 +38,7 @@ where period = "I semestre" and year = 1
 
 select *
 from exams
-where hour(hour) >= 14 and date = "2020/06/20"
+where hour(hour) >= 14 and date = "2020-06-20"
 
 
 -- 6. Selezionare tutti i corsi di laurea magistrale (38)
