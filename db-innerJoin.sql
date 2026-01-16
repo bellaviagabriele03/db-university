@@ -57,7 +57,17 @@ order by students.surname
 -- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
 
-
+select distinct teachers.name as teacher_name, teachers.surname as teacher_surname, departments.name as department_name 
+from teachers
+inner join course_teacher 
+on teachers.id = course_teacher.teacher_id
+inner join courses 
+on course_teacher.course_id = courses.id
+inner join degrees 
+on courses.degree_id = degrees.id
+inner join departments 
+on degrees.department_id = departments.id 
+where departments.name = "dipartimento di matematica"
 
 
 
